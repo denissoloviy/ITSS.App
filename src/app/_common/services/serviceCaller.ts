@@ -1,15 +1,14 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
-import { ToastrWrapper } from "./toastrService";
-
+import { ToastrService } from "./toastrService";
 
 @Injectable()
 export class ServiceCaller {
     private _baseUrl: string;
 
     constructor(private _http: HttpClient,
-        private _toastr: ToastrWrapper) {
+        private _toastr: ToastrService) {
         this._baseUrl = "";
     }
 

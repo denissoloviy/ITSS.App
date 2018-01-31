@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import * as toastr from "toastr";
 
 @Injectable()
-export class ToastrWrapper {
+export class ToastrService {
 
     constructor() {
         toastr.options.closeButton = false;
