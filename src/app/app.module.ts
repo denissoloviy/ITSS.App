@@ -5,13 +5,21 @@ import { MDCService } from "./_common/services/mdcService";
 import { ServiceCaller } from "./_common/services/serviceCaller";
 import { ToastrService } from "./_common/services/toastrService";
 import { AppComponent } from "./app.component";
+import { PeopleCheckComponent } from "./components/peopleCheck/peopleCheck.component";
+import { ProjectDetailsComponent } from "./components/projectDetails/projectDetails.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProjectDetailsComponent,
+    PeopleCheckComponent
   ],
   imports: [
     BrowserModule
+  ],
+  entryComponents: [
+    ProjectDetailsComponent,
+    PeopleCheckComponent
   ],
   providers: [
     MDCService,
