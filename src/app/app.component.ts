@@ -1,6 +1,7 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from "@angular/core";
-import { NavModel } from "./models/navModel";
+import { AfterViewInit, Component, ElementRef, ViewChild } from "@angular/core";
+
 import { MDCService } from "./_common/services/mdcService";
+import { NavModel } from "./models/navModel";
 
 @Component({
   selector: "app-root",
