@@ -1,0 +1,7 @@
+.mdc-select {
+  width: 200px;
+}
+
+.mdc-simple-menu.mdc-select__menu{
+    margin-top: 8px;
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { ProjectDetailsParam } from "./models/projectDetailsParam";
 
 @Component({
     selector: "project-details",
@@ -6,7 +7,11 @@ import { Component, OnInit } from "@angular/core";
 })
 
 export class ProjectDetailsComponent implements OnInit {
-    constructor() { }
+    params: ProjectDetailsParam;
+
+    constructor() {
+        this.params = new ProjectDetailsParam();
+    }
 
     ngOnInit() { }
 }

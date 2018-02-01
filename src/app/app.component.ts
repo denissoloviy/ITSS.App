@@ -8,10 +8,12 @@ import {
   ViewContainerRef,
 } from "@angular/core";
 
+import { EnvModel } from "./_common/models/envModel";
+import { NavModel } from "./_common/models/navModel";
+import { EnvService } from "./_common/services/envService";
 import { MDCService } from "./_common/services/mdcService";
 import { PeopleCheckComponent } from "./components/peopleCheck/peopleCheck.component";
 import { ProjectDetailsComponent } from "./components/projectDetails/projectDetails.component";
-import { NavModel } from "./models/navModel";
 
 @Component({
   selector: "app-root",
@@ -23,7 +25,8 @@ export class AppComponent implements AfterViewInit {
   @ViewChild("content", { read: ViewContainerRef }) contentEl;
 
   constructor(private _mdcService: MDCService,
-    private _componentFactoryResolver: ComponentFactoryResolver) { }
+    private _componentFactoryResolver: ComponentFactoryResolver,
+    private _envService: EnvService) { }
 
   public navs: NavModel[] = [{
     isActive: false,
@@ -39,8 +42,23 @@ export class AppComponent implements AfterViewInit {
     type: ProjectDetailsComponent
   }];
 
+  public envs: EnvModel[] = [{
+    name: "Test",
+    serviceUrl: "https://test-is.itera.no/api/",
+    askOnChange: false
+  }, {
+    name: "Prod",
+    serviceUrl: "https://is.itera.no/api/",
+    askOnChange: true
+  }];
+
   ngAfterViewInit(): void {
+    this._envService.currEnv = this.envs[0];
     this._mdcService.mdc.tabs.MDCTabBar.attachTo(this.navEl.nativeElement);
+  }
+
+  envChanged(env: EnvModel): void {
+    this._envService.currEnv = env;
   }
 
   openTab(n: NavModel): void {
