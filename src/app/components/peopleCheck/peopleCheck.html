@@ -1,7 +1,7 @@
 <section class="switchers noselect-labels">
   <switcher *ngFor="let system of systems" [id]="system.title" [isChecked]="system.isActive" (onChange)="systemChange($event);">{{system.title}}</switcher>
   <text-field [(value)]="employeeMaconomyId" [label]="'Employee Maconomy Id'"></text-field>
-  <button class="mdc-button mdc-button--unelevated secondary-filled-button" (onClick)="getUsers();">Get users</button>
+  <button class="mdc-button mdc-button--unelevated secondary-filled-button" (click)="getUsers();">Get users</button>
 </section>
 <section class="users noselect">
   <table>

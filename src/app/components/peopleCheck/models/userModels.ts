@@ -1,8 +1,23 @@
-export class CommonUserModel {
-    public firstName: string;
+export class CommonUsersModel {
+    public etWebUser: Employee;
+    public adUser: Employee;
+    public maconomyUser: Employee;
 }
 
 export class Employee {
+    constructor() {
+        this.LoginId = "value";
+        this.FirstName = "value";
+        this.LastName = "value";
+        this.MaconomyEmployeeNumber = "value";
+        this.EtWebCompanyId = 1;
+        this.EtWebDepartmentId = 1;
+        this.EtWebTeamId = 0;
+        this.SupervisorMaconomyID = "value";
+        this.EmailJob = "value";
+        this.JobTitle = "value";
+        this.Name = "value";
+    }
     public LoginId: string;
     public FirstName: string;
     public LastName: string;

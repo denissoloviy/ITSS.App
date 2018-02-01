@@ -1,32 +1,19 @@
 import { Component, OnInit } from "@angular/core";
 
-import { ServiceCaller } from "../../_common/services/serviceCaller";
 import { SystemModel } from "./models/systemModel";
-import { Employee } from "./models/commonUserModel";
+import { CommonUsersModel, Employee } from "./models/userModels";
+import { PeopleCheckService } from "./services/peopleCheckService";
 
 @Component({
     selector: "people-check",
     templateUrl: "peopleCheck.html",
-    styleUrls: ["./peopleCheck.css"]
+    styleUrls: ["./peopleCheck.css"],
+    providers: [PeopleCheckService]
 })
 export class PeopleCheckComponent implements OnInit {
-    private employee: Employee = {
-        LoginId: "value",
-        FirstName: "value",
-        LastName: "value",
-        MaconomyEmployeeNumber: "value",
-        EtWebCompanyId: 1,
-        EtWebDepartmentId: 1,
-        EtWebTeamId: 1,
-        SupervisorMaconomyID: "value",
-        EmailJob: "value",
-        JobTitle: "value",
-        Name: "value"
-    };
     private systems: SystemModel[] = [{
         isActive: true,
-        title: "EtWeb",
-        user: this.employee
+        title: "EtWeb"
     }, {
         isActive: false,
         title: "AD"
@@ -37,9 +24,9 @@ export class PeopleCheckComponent implements OnInit {
     private activeSystems: SystemModel[];
     private employeeMaconomyId: string;
 
-    private employeeProperties = Object.keys(this.employee);
+    private employeeProperties = Object.keys(new Employee());
 
-    // constructor(private _service: ServiceCaller) { }
+    constructor(private _service: PeopleCheckService) { }
 
     ngOnInit(): void {
         this.activeSystems = this.systems.filter(x => x.isActive);
@@ -53,7 +40,24 @@ export class PeopleCheckComponent implements OnInit {
         this.activeSystems = this.systems.filter(x => x.isActive);
     }
 
-    // public getUser(): void {
+    public getUsers(): void {
+        this._service.getUsers(this.employeeMaconomyId).then(data => {
+            for (let system of this.systems) {
+                system.user = this.getUserBySystem(system.title, data);
+            }
+        });
+    }
 
-    // }
+    private getUserBySystem(systemName: string, users: CommonUsersModel): Employee {
+        switch (systemName) {
+            case "EtWeb":
+                return users.etWebUser;
+            case "AD":
+                return users.adUser;
+            case "Maconomy":
+                return users.maconomyUser;
+            default:
+                break;
+        }
+    }
 }
