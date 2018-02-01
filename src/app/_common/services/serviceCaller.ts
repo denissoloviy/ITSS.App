@@ -1,15 +1,15 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 
+import { EnvService } from "./envService";
 import { ToastrService } from "./toastrService";
 
 @Injectable()
 export class ServiceCaller {
-    private _baseUrl: string;
 
     constructor(private _http: HttpClient,
-        private _toastr: ToastrService) {
-        this._baseUrl = "";
+        private _toastr: ToastrService,
+        private _envService: EnvService) {
     }
 
     post(controller: string, method: string, data: any): Promise<any> {
@@ -47,7 +47,7 @@ export class ServiceCaller {
     }
 
     private _getUrl(controller: string, method: string, data: any, isGet: boolean): string {
-        let url = this._baseUrl + controller + "/" + method;
+        let url = this._envService.currEnv.serviceUrl + controller + "/" + method;
         if (isGet) {
             url += "?" + this._getParameters(data);
         }

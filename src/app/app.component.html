@@ -1,4 +1,8 @@
 <div>
+  <div class="envContainer">
+    <dropdown [items]="envs" [fieldName]="'name'" (onChange)="envChanged($event)"></dropdown>
+  </div>
+
   <nav #navContainer class="mdc-tab-bar" role="tablist">
     <a class="mdc-tab" [ngClass]="{'mdc-tab--active ': n.isActive}" (click)="openTab(n)" *ngFor="let n of navs" href="javascript:;">
       {{n.title}}

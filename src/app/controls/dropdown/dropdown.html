@@ -1,0 +1,14 @@
+<div #container class="mdc-select" role="listbox">
+    <div class="mdc-select__surface" tabindex="0">
+      <div class="mdc-select__label">Environment</div>
+      <div class="mdc-select__selected-text"></div>
+      <div class="mdc-select__bottom-line"></div>
+    </div>
+    <div class="mdc-simple-menu mdc-select__menu">
+      <ul class="mdc-list mdc-simple-menu__items">
+        <li class="mdc-list-item" role="option" *ngFor="let item of items" tabindex="0">
+          {{item[fieldName]}}
+        </li>
+      </ul>
+    </div>
+  </div>

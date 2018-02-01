@@ -1,0 +1,8 @@
+.envContainer {
+  position: absolute;
+  right: 30px;
+}
+
+.mdc-tab-bar {
+  padding-top: 8px;
+}

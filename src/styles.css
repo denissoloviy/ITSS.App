@@ -5,3 +5,17 @@ body {
 .hidden {
   display: none;
 }
+
+.content {
+  display: flex;
+}
+
+.content .row {
+  display: flex;
+  flex-direction: row;
+}
+
+.content .column {
+  display: flex;
+  flex-direction: column;
+}
