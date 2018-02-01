@@ -4,7 +4,7 @@
   </div>
 
   <nav #navContainer class="mdc-tab-bar" role="tablist">
-    <a class="mdc-tab" [ngClass]="{'mdc-tab--active ': n.isActive}" (click)="openTab(n)" *ngFor="let n of navs" href="javascript:;">
+    <a class="mdc-tab mdc-tab--theme-dark" [ngClass]="{'mdc-tab--active ': n.isActive}" (click)="openTab(n)" *ngFor="let n of navs" href="javascript:;">
       {{n.title}}
     </a>
     <span class="mdc-tab-bar__indicator" [ngClass]="{'hidden': !hasActive()}"></span>

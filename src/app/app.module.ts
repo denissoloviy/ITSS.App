@@ -1,3 +1,4 @@
+import { SwitcherComponent } from "./_common/components/switcher.component";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
@@ -18,6 +19,7 @@ import { TextFieldComponent } from "./controls/textField/textField.component";
     AppComponent,
     ProjectDetailsComponent,
     PeopleCheckComponent,
+    SwitcherComponent,
     DropdownComponent,
     CheckboxComponent,
     TextFieldComponent
@@ -29,6 +31,7 @@ import { TextFieldComponent } from "./controls/textField/textField.component";
   entryComponents: [
     ProjectDetailsComponent,
     PeopleCheckComponent,
+    SwitcherComponent,
     DropdownComponent,
     CheckboxComponent,
     TextFieldComponent
