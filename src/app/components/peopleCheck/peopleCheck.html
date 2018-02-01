@@ -1,3 +1,13 @@
-<div style="color:red">
-    i'm people check
-</div>
+<section class="switchers">
+  <switcher *ngFor="let system of systems" [id]="system.title" [isChecked]="system.isActive">{{system.title}}</switcher>
+</section>
+<section class="users">
+  <div class="mdc-layout-grid">
+    <div class="mdc-layout-grid__inner">
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">Property</div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">EtWeb</div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">AD</div>
+      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">Maconomy</div>
+    </div>
+  </div>
+</section>

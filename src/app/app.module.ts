@@ -1,3 +1,4 @@
+import { SwitcherComponent } from "./_common/components/switcher.component";
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
@@ -12,14 +13,16 @@ import { ProjectDetailsComponent } from "./components/projectDetails/projectDeta
   declarations: [
     AppComponent,
     ProjectDetailsComponent,
-    PeopleCheckComponent
+    PeopleCheckComponent,
+    SwitcherComponent
   ],
   imports: [
     BrowserModule
   ],
   entryComponents: [
     ProjectDetailsComponent,
-    PeopleCheckComponent
+    PeopleCheckComponent,
+    SwitcherComponent
   ],
   providers: [
     MDCService,
