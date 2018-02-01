@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 
 import { EnvService } from "./_common/services/envService";
@@ -22,7 +23,8 @@ import { TextFieldComponent } from "./controls/textField/textField.component";
     TextFieldComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   entryComponents: [
     ProjectDetailsComponent,
