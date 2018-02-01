@@ -1,4 +1,3 @@
-import { SwitcherComponent } from "./_common/components/switcher.component";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
@@ -12,6 +11,7 @@ import { PeopleCheckComponent } from "./components/peopleCheck/peopleCheck.compo
 import { ProjectDetailsComponent } from "./components/projectDetails/projectDetails.component";
 import { CheckboxComponent } from "./controls/checkbox/checkbox.component";
 import { DropdownComponent } from "./controls/dropdown/dropdown.component";
+import { SwitcherComponent } from "./controls/switcher/switcher.component";
 import { TextFieldComponent } from "./controls/textField/textField.component";
 
 @NgModule({
