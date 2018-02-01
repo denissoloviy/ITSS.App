@@ -1,13 +1,27 @@
-<section class="switchers">
-  <switcher *ngFor="let system of systems" [id]="system.title" [isChecked]="system.isActive">{{system.title}}</switcher>
+<section class="switchers noselect-labels">
+  <switcher *ngFor="let system of systems" [id]="system.title" [isChecked]="system.isActive" (onChange)="systemChange($event);">{{system.title}}</switcher>
+  <text-field [(value)]="employeeMaconomyId" [label]="'Employee Maconomy Id'"></text-field>
+  <button class="mdc-button mdc-button--unelevated secondary-filled-button" (onClick)="getUsers();">Get users</button>
 </section>
-<section class="users">
-  <div class="mdc-layout-grid">
-    <div class="mdc-layout-grid__inner">
-      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-1">Property</div>
-      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">EtWeb</div>
-      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">AD</div>
-      <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-3">Maconomy</div>
-    </div>
-  </div>
+<section class="users noselect">
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Property
+        </th>
+        <th *ngFor="let system of activeSystems">
+          {{system.title}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let property of employeeProperties">
+        <td>{{property}}</td>
+        <td *ngFor="let system of activeSystems">
+          {{system.user?system.user[property]:""}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </section>

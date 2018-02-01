@@ -1,6 +1,6 @@
 <div class="switch-wrapper">
   <div class="mdc-switch">
-    <input type="checkbox" id="{{id}}" class="mdc-switch__native-control" checked="{{isChecked}}" />
+    <input type="checkbox" id="{{id}}" class="mdc-switch__native-control" [checked]="isChecked" (change)="onChange.emit(id)" />
     <div class="mdc-switch__background">
       <div class="mdc-switch__knob"></div>
     </div>
