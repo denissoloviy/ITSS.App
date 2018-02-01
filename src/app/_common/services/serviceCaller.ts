@@ -57,7 +57,7 @@ export class ServiceCaller {
     private _getParameters(data: any): string {
         let urlParams = "";
         for (let field in data) {
-            if (data[field]) {
+            if (data[field] || typeof (data[field]) === "boolean") {
                 if (Object.prototype.toString.call(data[field]) === "[object Array]") {
                     let array = data[field];
                     for (let i = 0; i < array.length; i++) {

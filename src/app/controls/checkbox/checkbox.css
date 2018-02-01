@@ -1,0 +1,7 @@
+:host {
+  padding-left: 15px;
+}
+
+:host>label {
+  line-height: 40px;
+}

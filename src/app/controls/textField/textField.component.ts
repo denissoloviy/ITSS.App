@@ -1,22 +1,31 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, ViewChild } from "@angular/core";
-import { MDCTextFieldLabel } from "@material/TextField";
+import { MDCService } from "../../_common/services/mdcService";
 
 @Component({
     selector: "text-field",
-    templateUrl: "textField.html"
+    templateUrl: "textField.html",
+    styleUrls: ["textField.css"]
 })
 
 export class TextFieldComponent implements AfterViewInit {
-    @Input() value: string;
+    private _value: string;
+
+    @Input() get value(): string {
+        return this._value;
+    }
+    set value(val: string) {
+        this._value = val;
+        this.valueChange.emit(val);
+    }
     @Input() label: string;
 
-    @Output() onValueChanged = new EventEmitter<string>();
+    @Output() valueChange = new EventEmitter<string>();
 
     @ViewChild("container") containerEl: ElementRef;
 
-    private mdcTextInput: MDCTextFieldLabel;
+    constructor(private _mdcService: MDCService) { }
 
     ngAfterViewInit(): void {
-        this.mdcTextInput = new MDCTextFieldLabel(this.containerEl.nativeElement);
+        this._mdcService.mdc.textField.MDCTextField.attachTo(this.containerEl.nativeElement);
     }
 }

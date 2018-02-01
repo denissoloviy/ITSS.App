@@ -16,6 +16,8 @@ body {
 
 .content {
   display: flex;
+  padding-top: 30px;
+  flex-direction: column;
 }
 
 .content .row {
@@ -26,4 +28,24 @@ body {
 .content .column {
   display: flex;
   flex-direction: column;
+}
+
+.content.center {
+  width: 80%;
+  margin: auto auto;
+  justify-content: center;
+}
+
+.content.center>* {
+  justify-content: center;
+}
+
+.content .column>checkbox,
+.content .column>button {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.content button {
+  margin-left: 15px
 }
