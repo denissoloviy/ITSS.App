@@ -1,8 +1,9 @@
-import { SwitcherComponent } from "./_common/components/switcher.component";
+import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
 
+import { SwitcherComponent } from "./_common/components/switcher.component";
 import { EnvService } from "./_common/services/envService";
 import { MDCService } from "./_common/services/mdcService";
 import { ServiceCaller } from "./_common/services/serviceCaller";
@@ -12,6 +13,7 @@ import { PeopleCheckComponent } from "./components/peopleCheck/peopleCheck.compo
 import { ProjectDetailsComponent } from "./components/projectDetails/projectDetails.component";
 import { CheckboxComponent } from "./controls/checkbox/checkbox.component";
 import { DropdownComponent } from "./controls/dropdown/dropdown.component";
+import { JsonValuesComponent } from "./controls/jsonValues/jsonValues.component";
 import { TextFieldComponent } from "./controls/textField/textField.component";
 
 @NgModule({
@@ -22,11 +24,13 @@ import { TextFieldComponent } from "./controls/textField/textField.component";
     SwitcherComponent,
     DropdownComponent,
     CheckboxComponent,
-    TextFieldComponent
+    TextFieldComponent,
+    JsonValuesComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   entryComponents: [
     ProjectDetailsComponent,
@@ -34,7 +38,8 @@ import { TextFieldComponent } from "./controls/textField/textField.component";
     SwitcherComponent,
     DropdownComponent,
     CheckboxComponent,
-    TextFieldComponent
+    TextFieldComponent,
+    JsonValuesComponent
   ],
   providers: [
     MDCService,

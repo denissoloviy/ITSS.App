@@ -1,10 +1,20 @@
-<div class="content">
+<div class="content center">
   <div class="row">
     <div class="column">
       <text-field [(value)]="params.maconomyId" [label]="'Maconomy Id'"></text-field>
     </div>
     <div class="column">
-        <checkbox [(value)]="params.checkbManager" [label]="'Check Manager'"></checkbox>
+      <checkbox [(value)]="params.checkManager" [label]="'Check Manager'"></checkbox>
+    </div>
+    <div class="column">
+      <button class="mdc-button mdc-button--raised" (click)="invokeService()">
+        Invoke
+      </button>
+    </div>
+  </div>
+  <div class="row data">
+    <div class="row">
+      <json-values [json]="detailsJson"></json-values>
     </div>
   </div>
 </div>

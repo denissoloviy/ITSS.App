@@ -1,13 +1,23 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
     selector: "checkbox",
-    templateUrl: "checkbox.html"
+    templateUrl: "checkbox.html",
+    styleUrls: ["checkbox.css"]
 })
 
 export class CheckboxComponent {
-    @Input() value: boolean;
+    private _value: boolean;
+
+    @Input() get value(): boolean {
+        return this._value;
+    }
+    set value(val: boolean) {
+        this._value = val;
+        this.valueChange.emit(val);
+    }
+
     @Input() label: string;
 
-    @Output() onValueChanged = new EventEmitter<boolean>();
+    @Output() valueChange = new EventEmitter<boolean>();
 }

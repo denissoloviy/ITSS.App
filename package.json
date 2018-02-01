@@ -25,6 +25,8 @@
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
     "core-js": "^2.4.1",
+    "json-formatter-js": "^2.2.0",
+    "less": "^2.7.3",
     "material-components-web": "^0.28.0",
     "rxjs": "^5.5.6",
     "spin.js": "^3.1.0",
