@@ -16,9 +16,9 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let property of employeeProperties">
+      <tr *ngFor="let property of employeeProperties; let i = index">
         <td>{{property}}</td>
-        <td *ngFor="let system of activeSystems">
+        <td *ngFor="let system of activeSystems" [ngClass]="{'invalid': mismatches[i]}">
           {{system.user?system.user[property]:""}}
         </td>
       </tr>

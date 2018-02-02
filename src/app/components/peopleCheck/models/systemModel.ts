@@ -1,8 +1,8 @@
 import { EventEmitter } from "@angular/core";
-import { Employee } from "./userModels";
+import { FullEmployee } from "./userModels";
 
 export class SystemModel {
     public isActive: boolean;
     public title: string;
-    public user?: Employee;
+    public user?: FullEmployee;
 }
