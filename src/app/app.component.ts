@@ -22,7 +22,6 @@ import { ProjectDetailsComponent } from "./components/projectDetails/projectDeta
 })
 export class AppComponent implements AfterViewInit {
   @ViewChild("navContainer") navEl: ElementRef;
-  @ViewChild("content", { read: ViewContainerRef }) contentEl;
 
   constructor(private _mdcService: MDCService,
     private _componentFactoryResolver: ComponentFactoryResolver,
@@ -68,14 +67,6 @@ export class AppComponent implements AfterViewInit {
 
     this.navs.forEach(x => x.isActive = false);
     n.isActive = true;
-    this.setComponent(n.type);
-  }
-
-  setComponent(type: Type<{}>) {
-    this.contentEl.clear();
-    const factory = this._componentFactoryResolver.resolveComponentFactory(type);
-    const ref = this.contentEl.createComponent(factory);
-    ref.changeDetectorRef.detectChanges();
   }
 
   hasActive(): boolean {

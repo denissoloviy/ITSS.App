@@ -8,6 +8,7 @@ import { MDCService } from "./_common/services/mdcService";
 import { ServiceCaller } from "./_common/services/serviceCaller";
 import { ToastrService } from "./_common/services/toastrService";
 import { AppComponent } from "./app.component";
+import { DynamicContentComponent } from "./components/dynamicContent/dynamicContent.component";
 import { PeopleCheckComponent } from "./components/peopleCheck/peopleCheck.component";
 import { ProjectDetailsComponent } from "./components/projectDetails/projectDetails.component";
 import { CheckboxComponent } from "./controls/checkbox/checkbox.component";
@@ -26,7 +27,8 @@ import { TextFieldComponent } from "./controls/textField/textField.component";
     DropdownComponent,
     CheckboxComponent,
     TextFieldComponent,
-    JsonValuesComponent
+    JsonValuesComponent,
+    DynamicContentComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { TextFieldComponent } from "./controls/textField/textField.component";
     DropdownComponent,
     CheckboxComponent,
     TextFieldComponent,
-    JsonValuesComponent
+    JsonValuesComponent,
+    DynamicContentComponent
   ],
   providers: [
     MDCService,
