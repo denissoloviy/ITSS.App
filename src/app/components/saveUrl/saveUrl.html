@@ -1,0 +1,15 @@
+<div class="content center">
+  <div class="row">
+    <div class="column">
+      <text-field [(value)]="params.maconomyId" [label]="'Maconomy Id'"></text-field>
+    </div>
+    <div class="column" style="padding-left: 15px;">
+      <text-field [(value)]="params.url" [label]="'Url'"></text-field>
+    </div>
+    <div class="column">
+      <button class="mdc-button mdc-button--raised" (click)="invokeService()">
+        Invoke
+      </button>
+    </div>
+  </div>
+</div>

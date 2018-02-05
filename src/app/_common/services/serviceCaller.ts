@@ -12,6 +12,10 @@ export class ServiceCaller {
         private _envService: EnvService) {
     }
 
+    put(controller: string, method: string, data: any): Promise<any> {
+        return this._invoke(controller, method, "PUT", data);
+    }
+
     post(controller: string, method: string, data: any): Promise<any> {
         return this._invoke(controller, method, "POST", data);
     }
@@ -25,7 +29,7 @@ export class ServiceCaller {
     }
 
     private _invoke(controller: string, method: string, type: string, data: any): Promise<any> {
-        let isGet = type.toLowerCase() === "get";
+        let isGet = type.toLowerCase() === "get" || type.toLowerCase() === "put";
 
         let url = this._getUrl(controller, method, data, isGet);
 

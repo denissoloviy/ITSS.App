@@ -11,12 +11,12 @@ import { AppComponent } from "./app.component";
 import { DynamicContentComponent } from "./components/dynamicContent/dynamicContent.component";
 import { PeopleCheckComponent } from "./components/peopleCheck/peopleCheck.component";
 import { ProjectDetailsComponent } from "./components/projectDetails/projectDetails.component";
+import { SaveUrlComponent } from "./components/saveUrl/saveUrl.component";
 import { CheckboxComponent } from "./controls/checkbox/checkbox.component";
 import { DropdownComponent } from "./controls/dropdown/dropdown.component";
 import { JsonValuesComponent } from "./controls/jsonValues/jsonValues.component";
 import { SwitcherComponent } from "./controls/switcher/switcher.component";
 import { TextFieldComponent } from "./controls/textField/textField.component";
-
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { TextFieldComponent } from "./controls/textField/textField.component";
     CheckboxComponent,
     TextFieldComponent,
     JsonValuesComponent,
-    DynamicContentComponent
+    DynamicContentComponent,
+    SaveUrlComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +44,8 @@ import { TextFieldComponent } from "./controls/textField/textField.component";
     CheckboxComponent,
     TextFieldComponent,
     JsonValuesComponent,
-    DynamicContentComponent
+    DynamicContentComponent,
+    SaveUrlComponent
   ],
   providers: [
     MDCService,

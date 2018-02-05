@@ -1,12 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  ComponentFactoryResolver,
-  ElementRef,
-  Type,
-  ViewChild,
-  ViewContainerRef,
-} from "@angular/core";
+import { AfterViewInit, Component, ComponentFactoryResolver, ElementRef, ViewChild } from "@angular/core";
 
 import { EnvModel } from "./_common/models/envModel";
 import { NavModel } from "./_common/models/navModel";
@@ -14,6 +6,7 @@ import { EnvService } from "./_common/services/envService";
 import { MDCService } from "./_common/services/mdcService";
 import { PeopleCheckComponent } from "./components/peopleCheck/peopleCheck.component";
 import { ProjectDetailsComponent } from "./components/projectDetails/projectDetails.component";
+import { SaveUrlComponent } from "./components/saveUrl/saveUrl.component";
 
 @Component({
   selector: "app-root",
@@ -38,7 +31,7 @@ export class AppComponent implements AfterViewInit {
   }, {
     isActive: false,
     title: "Maconomy Project Url Save",
-    type: ProjectDetailsComponent
+    type: SaveUrlComponent
   }];
 
   public envs: EnvModel[] = [{
